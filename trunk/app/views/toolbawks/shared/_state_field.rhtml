@@ -1,0 +1,19 @@
+<%= render(
+  :partial => 'toolbawks/addresses/field', 
+  :locals => { 
+    :field_input => select( :address, field_column, get_options_states_for_country(default_country_for_states), { 
+        :include_blank => true 
+      }, { 
+        :name => "#{field_model}[#{field_column}]", 
+        :id => field_alias + '_field_' + field_column, 
+        :class => field_column 
+      } 
+    ), 
+    :field_alias => field_alias, 
+    :field_name => field_name, 
+    :required => required,
+    :field_model => field_model,
+    :description => description || "",
+    :errors => errors
+  }
+) %>

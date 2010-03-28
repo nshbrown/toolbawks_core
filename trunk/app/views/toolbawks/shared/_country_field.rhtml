@@ -1,0 +1,20 @@
+<%= render( 
+  :partial => 'toolbawks/addresses/field', 
+  :locals => { 
+    :field_input => hidden_field(
+        field_model,
+        field_column,
+        :name => "#{field_alias}[#{field_column}]", 
+        :id => field_alias + '_field_' + field_column + '_hidden'
+      ) + country_select(:address, field_column, priority_countries, {}, { 
+      :name => "#{field_alias}[#{field_column}]", 
+      :id => field_alias + '_field_' + field_column, 
+      :class => field_column } ),
+    :field_alias => field_alias, 
+    :field_name => field_name, 
+    :required => required,
+    :field_model => field_model,
+    :description => description || "",
+    :errors => errors
+  } 
+) %>

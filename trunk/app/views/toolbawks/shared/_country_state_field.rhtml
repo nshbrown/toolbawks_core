@@ -1,0 +1,30 @@
+<%
+if params["#{field_alias}"] && params["#{field_alias}"][field_column.to_sym]
+  selected = params["#{field_alias}"][field_column.to_sym]
+else 
+  selected = selected
+end
+
+selected = selected
+
+field_input = country_select_options_html(
+  :selected => selected, 
+  :id => (field_alias + '_field_' + field_column), 
+  :name => (field_model + '[' + field_column + ']'),
+  :css => field_column,
+  :disabled => disabled
+)
+%>
+<%= render( 
+  :partial => 'toolbawks/addresses/field', 
+  :locals => { 
+    :field_input => field_input,
+    :field_name => 'Country, State / Province',
+    :field_alias => _field, 
+    :field_name => field_name, 
+    :required => required ,
+    :field_model => field_model,
+    :description => description || "",
+    :errors => errors
+  } 
+) %>

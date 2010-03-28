@@ -1,0 +1,9 @@
+<%= hidden_field(
+  field_model, 
+  field_column, 
+  :name => "#{field_model}[#{field_column}]", 
+  :id => field_alias + '_field_' + field_column,
+  :value => params["#{field_model}"] && params["#{field_model}"][field_column] ? params["#{field_model}"][field_column] : false,
+  :errors => errors,
+  :options => {}
+) %>

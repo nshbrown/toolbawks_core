@@ -1,0 +1,13 @@
+<%= render( 
+  :partial => 'toolbawks/shared/field', 
+  :locals => { 
+    :field_input => text_field(field_model, field_column, :name => "#{field_model}[#{field_column}]", :id => field_alias + '_field_' + field_column, :class => field_column), 
+    :field_alias => field_alias, 
+    :field_name => field_name, 
+    :required => required,
+    :field_model => field_model,
+    :description => description || "",
+    :errors => errors,
+    :options => {}
+  } 
+) %>

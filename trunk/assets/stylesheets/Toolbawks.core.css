@@ -1,0 +1,164 @@
+/***
+# Copyright (c) 2007 Nathaniel Brown
+# 
+# Permission is hereby granted, free of charge, to any person obtaining a copy
+# of this software and associated documentation files (the "Software"), to deal
+# in the Software without restriction, including without limitation the rights
+# to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+# copies of the Software, and to permit persons to whom the Software is
+# furnished to do so, subject to the following conditions:
+# 
+# The above copyright notice and this permission notice shall be included in
+# all copies or substantial portions of the Software.
+# 
+# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+# FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+# AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+# LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+# OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+# THE SOFTWARE.
+***/
+
+body {
+  font-family: arial, helvetica, sans-serif;
+}
+
+h1.toolbawks_title {
+  font-size: 1.2em;
+  color: #333;
+}
+
+/*** GLOBAL ***/
+
+.clearfix:after {
+    content: "."; 
+    display: block; 
+    height: 0; 
+    clear: both; 
+    visibility: hidden;
+}
+
+.clearfix {display: inline-block;}
+
+/* Hides from IE-mac \*/
+* html .clearfix {height: 1%;}
+.clearfix {display: block;}
+/* End hide from IE-mac */
+
+
+/*** Info Msgs ***/
+
+.msg .x-box-mc {
+    font-size:14px;
+}
+
+#msg-div {
+    position:absolute;
+    left:35%;
+    top:10px;
+    width:400px;
+    z-index:20000;
+}
+
+/*** DEBUG ***/
+
+pre {
+  background-color: #f1f1f3;
+  color: #112;
+  padding: 10px;
+  font-size: 1.1em;
+  line-height: 1.2em;
+  overflow: auto;
+  margin: 4px 0px;
+  width: 95%;
+}
+
+/*** Syntax highlighting ***/
+
+pre .normal {}
+pre .comment { color: #005; font-style: italic; }
+pre .keyword { color: #A00; font-weight: bold; }
+pre .method { color: #077; }
+pre .class { color: #074; }
+pre .module { color: #050; }
+pre .punct { color: #447; font-weight: bold; }
+pre .symbol { color: #099; }
+pre .string { color: #944; background: #FFE; }
+pre .char { color: #F07; }
+pre .ident { color: #004; }
+pre .constant { color: #07F; }
+pre .regex { color: #B66; background: #FEF; }
+pre .number { color: #F99; }
+pre .attribute { color: #5bb; }
+pre .global { color: #7FB; }
+pre .expr { color: #227; }
+pre .escape { color: #277; }
+
+/*** Form Fields ***/
+
+div.field_row {
+  margin: 6px 0 6px 0;
+}
+
+div.field {
+  float: left;
+  margin: 0 10px 0 0;
+}
+
+div.field label {
+  display: block;
+  font-size: 0.7em;
+  padding: 0 0 1px 0;
+  color: #333;
+}
+
+div.field_checkbox label {
+  display: inline;
+}
+
+div.field input {
+  border: 1px solid #333;
+  font-size: 0.9em;
+  padding: 3px 4px 3px;
+  font-weight: bold;
+}
+
+div.field select {
+  border: 1px solid #333;
+  font-size: 0.9em;
+  line-height: 1.2em;
+  font-weight: bold;
+}
+
+div.field span.required {
+  color: red;
+  font-weight: bold;
+  padding: 0 0 2px 3px;
+  font-size: 1.1em;
+}
+
+div.field span.error {
+  display: block;
+  color: red;
+  padding: 3px 0 0 0;
+  font-size: 0.6em;
+  line-height: 0.6em;
+}
+
+div.field span.description {
+  display: block;
+  color: #0000FF;
+  padding: 3px 0 0 0;
+  font-size: 0.6em;
+  line-height: 0.6em;
+}
+
+div.error input {
+  border: 1px solid red;
+  background: url('/plugin_assets/toolbawks_core/images/icons/exclaimation.gif') no-repeat right 30%;
+}
+
+div.error select {
+  border: 1px solid red;
+}

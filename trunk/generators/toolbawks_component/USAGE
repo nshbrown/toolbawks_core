@@ -1,0 +1,15 @@
+Description:
+  The Toolbawks Component generator assists in creating stub directories
+  which are common to each of the components within the Toolbawks framework.
+
+Example:
+  ./script/generate toolbawks_component [<component_name>]
+
+  This will generate:
+
+    RAILS_ROOT
+      |- vendor
+          |-plugins
+              |-toolbawks_component_name
+
+  which contains all the code for a Toolbawks Component.

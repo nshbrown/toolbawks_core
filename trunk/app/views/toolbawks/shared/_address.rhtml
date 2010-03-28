@@ -1,0 +1,34 @@
+<% 
+# Create the instance tag so that the form helpers have the default value
+@field = address
+-%>
+<div id="<%= field_alias %>_field" class="fields">
+  <div class="field_row clearfix">
+    <%= render :partial => 'toolbawks/shared/text_field', :locals => { :field_alias => field_alias, :field_column => 'name', :field_name => 'Name', :required => true } %>
+  </div>
+  <div class="field_row clearfix">
+    <%= render :partial => 'toolbawks/shared/text_field', :locals => { :field_alias => field_alias, :field_column => 'company', :field_name => 'Company', :required => false } %>
+  </div>
+  <div class="field_row clearfix">
+    <%= render :partial => 'toolbawks/shared/text_field', :locals => { :field_alias => field_alias, :field_column => 'address_line_one', :field_name => 'Address Line 1', :required => true } %>
+  </div>
+  <div class="field_row clearfix">
+    <%= render :partial => 'toolbawks/shared/text_field', :locals => { :field_alias => field_alias, :field_column => 'address_line_two', :field_name => 'Address Line 2', :required => false } %>
+  </div>
+  <div class="field_row clearfix">
+    <%= render :partial => 'toolbawks/shared/text_field', :locals => { :field_alias => field_alias, :field_column => 'city', :field_name => 'City', :required => true } %>
+    <%= render :partial => 'toolbawks/shared/text_field', :locals => { :field_alias => field_alias, :field_column => 'zip_postal_code', :field_name => 'Zip/Postal Code',  :required => true } %>
+  </div>
+  <div class="field_row clearfix">
+    <% render :partial => 'toolbawks/shared/state_field', :locals => { :field_alias => field_alias, :field_column => 'state_province', :field_name => 'State / Province', :required => true, :default_country_for_states => 'us' } %>
+    <% render :partial => 'toolbawks/shared/country_field', :locals => { :field_alias => field_alias, :field_column => 'country', :field_name => 'Country', :required => true, :priority_countries => [ 'United States', 'Canada' ] } %>
+    <%= render :partial => 'toolbawks/shared/country_state_province_field', :locals => { :field_alias => field_alias, :field_column => 'country_state_province', :field_name => 'Country or State / Province', :required => true, :disabled => ToolbawksAuthProfile.country_groups[:disabled], :selected => @address.country_state_province } %>
+  </div>
+  <div class="field_row clearfix">
+    <%= render :partial => 'toolbawks/shared/text_field', :locals => { :field_alias => field_alias, :field_column => 'phone', :field_name => 'Phone', :required => false, :example => 'Ex. 123-555-7890' } %>
+  </div>
+  <%= render :partial => 'toolbawks/shared/hidden_field', :locals => { :field_alias => field_alias, :field_column => 'toolbawks_address_id' } %>
+</div>
+<%
+@field = nil
+-%>

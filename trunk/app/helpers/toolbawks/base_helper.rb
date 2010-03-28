@@ -1,0 +1,2 @@
+module Toolbawks::BaseHelper
+end
